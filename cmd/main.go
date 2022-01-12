@@ -1,10 +1,10 @@
 package main
 
 import (
-	"KeyboardTyper/KeyboardMapper"
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/xh-dev-go/KeyboardTyper/KeyboardMapper"
 	"os"
 )
 
