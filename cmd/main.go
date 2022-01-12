@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/xh-dev-go/KeyboardTyper/KeyboardMapper"
+	"github.com/xh-dev-go/KeyboardTyper"
 	"os"
 )
 
@@ -22,14 +22,14 @@ func main() {
 	}
 
 	if fromStd != nil && *fromStd {
-		KeyboardMapper.TryTypeFromBuffer(*bufio.NewReader(os.Stdin), *printMessage)
+		KeyboardTyper.TryTypeFromBuffer(*bufio.NewReader(os.Stdin), *printMessage)
 	} else if enter != nil && *enter {
-		KeyboardMapper.TryType(KeyboardMapper.InstructionForEnter(), *printMessage)
+		KeyboardTyper.TryType(KeyboardTyper.InstructionForEnter(), *printMessage)
 	} else if backspace != nil && *backspace {
-		KeyboardMapper.TryType(KeyboardMapper.InstructionForBackspace(), *printMessage)
+		KeyboardTyper.TryType(KeyboardTyper.InstructionForBackspace(), *printMessage)
 	} else if controlAltDelete != nil && *controlAltDelete {
-		KeyboardMapper.TryType(KeyboardMapper.InstructionForCAD(), *printMessage)
+		KeyboardTyper.TryType(KeyboardTyper.InstructionForCAD(), *printMessage)
 	} else if msg != nil && *msg != "" {
-		KeyboardMapper.TryType(KeyboardMapper.InstructionForString(*msg), *printMessage)
+		KeyboardTyper.TryType(KeyboardTyper.InstructionForString(*msg), *printMessage)
 	}
 }

@@ -1,4 +1,4 @@
-package KeyboardMapper
+package KeyboardTyper
 
 import (
 	"bufio"
